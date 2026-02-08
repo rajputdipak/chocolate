@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chocolate Day 💝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+    .box{
+      background:#fff;
+      padding:25px;
+      border-radius:20px;
+      text-align:center;
+      width:90%;
+      max-width:360px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+      animation: fade 1s ease;
+    }
+    h2{color:#ff4f81;}
+    .btn{
+      display:block;
+      margin:15px 0;
+      padding:12px;
+      border-radius:30px;
+      text-decoration:none;
+      color:#fff;
+      background: linear-gradient(135deg, #ff4f81, #ff85a2);
+      transition:0.3s;
+    }
+    .btn:hover{transform:scale(1.05);}
+    @keyframes fade{
+      from{opacity:0; transform:translateY(30px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Choose Your Chocolate Day Style 🍫</h2>
+    <a class="btn" href="romantic.html">💖 Romantic Version</a>
+    <a class="btn" href="friend.html">🩷 Friend Cute Version</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chocolate Day For Richu 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{
+    margin:0; font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+    display:flex; justify-content:center; align-items:center;
+    min-height:100vh; overflow:hidden;
+  }
+
+  .hearts{ position: fixed; inset:0; pointer-events:none; z-index:0; }
+  .heart-bg{
+    position:absolute; width:12px; height:12px; background:#ff6f91;
+    transform: rotate(45deg); animation: floatUp linear infinite; opacity:.7;
+  }
+  .heart-bg:before,.heart-bg:after{
+    content:""; position:absolute; width:12px; height:12px; background:#ff6f91; border-radius:50%;
+    top:-6px; left:0;
+  }
+  .heart-bg:after{ left:-6px; top:0; }
+
+  .card{
+    position:relative; z-index:1; background:#fff; padding:18px; border-radius:22px;
+    text-align:center; width:92%; max-width:380px; box-shadow:0 15px 40px rgba(0,0,0,.15);
+    animation: fadeUp 1s ease;
+  }
+  h1{ color:#ff4f81; margin:6px 0; }
+  p{ color:#666; margin:0 0 8px; }
+
+  /* Normal photo frames */
+  .photo{
+    width:160px; height:160px; margin:10px auto; border-radius:16px; overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.2); animation: bob 3.2s ease-in-out infinite;
+    border:3px solid #ffb3c7; background:#fff;
+  }
+  .photo img{ width:100%; height:100%; object-fit:cover; }
+
+  .row{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+
+  .actions{ display:flex; gap:10px; justify-content:center; margin:8px 0; flex-wrap:wrap; }
+  button{
+    background: linear-gradient(135deg, #ff4f81, #ff85a2);
+    border:none; color:#fff; padding:10px 16px; border-radius:30px; cursor:pointer; font-size:14px;
+  }
+  .note{
+    display:none; margin-top:8px; background:#fff0f5; padding:10px; border-radius:12px;
+    animation: pop .4s ease forwards; color:#444;
+  }
+  audio{ width:100%; margin-top:6px; }
+
+  @keyframes bob{ 0%{transform:translateY(0);} 50%{transform:translateY(-8px);} 100%{transform:translateY(0);} }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+  @keyframes pop{ from{transform:scale(.7); opacity:0;} to{transform:scale(1); opacity:1;} }
+  @keyframes floatUp{ from{transform: translateY(100vh) rotate(45deg); opacity:.7;} to{transform: translateY(-10vh) rotate(45deg); opacity:0;} }
+</style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="card">
+  <h1>🍫 Happy Chocolate Day 💖</h1>
+  <p>For <strong>Richu</strong></p>
+
+  <!-- Photos (no heart shape) -->
+  <div class="row">
+    <div class="photo">
+      <img src="lover.jpg" alt="Richu">
+    </div>
+    <div class="photo">
+      <img src="images.jpg" alt="Chocolate">
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="document.getElementById('note').style.display='block'">Open Note 💌</button>
+    <button onclick="document.getElementById('song').play()">Play Song 🎵</button>
+  </div>
+
+  <div id="note" class="note">
+    “Richu, you make my life sweeter just like chocolate.  
+    Happy Chocolate Day 💖🍫”
+  </div>
+
+  <audio id="song" controls>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+  const hearts = document.getElementById('hearts');
+  for(let i=0;i<18;i++){
+    const h=document.createElement('div');
+    h.className='heart-bg';
+    h.style.left=Math.random()*100+'vw';
+    h.style.animationDuration=(6+Math.random()*6)+'s';
+    hearts.appendChild(h);
+  }
+</script>
+
+</body>
+</html>

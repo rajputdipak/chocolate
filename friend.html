@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chocolate Day for Friend 🩷</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body{
+      margin:0;
+      font-family: Poppins, Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+    .card{
+      background:#fff;
+      padding:20px;
+      border-radius:25px;
+      text-align:center;
+      width:90%;
+      max-width:360px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+      animation: fadeUp 1s ease;
+    }
+    h1{color:#ff4f81;}
+    img{
+      width:160px;
+      border-radius:20px;
+      margin:8px;
+      animation: float 3s ease-in-out infinite;
+      box-shadow:0 8px 20px rgba(255,79,129,0.3);
+    }
+    button{
+      background: linear-gradient(135deg, #ff4f81, #ff85a2);
+      border:none;
+      color:#fff;
+      padding:12px 25px;
+      border-radius:30px;
+      cursor:pointer;
+      font-size:16px;
+    }
+    .note{
+      display:none;
+      margin-top:12px;
+      background:#fff0f5;
+      padding:12px;
+      border-radius:12px;
+      animation: pop 0.4s ease forwards;
+    }
+    @keyframes float{
+      0%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+      100%{transform:translateY(0);}
+    }
+    @keyframes fadeUp{
+      from{opacity:0; transform:translateY(30px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+    @keyframes pop{
+      from{transform:scale(0.7); opacity:0;}
+      to{transform:scale(1); opacity:1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🍫 Happy Chocolate Day 🩷</h1>
+    <p>For my sweetest friend</p>
+    <img src="images.jpg" alt="Chocolate">
+    <img src="friend.jpg" alt="Friend Photo">
+    <button onclick="document.getElementById('note').style.display='block'">Tap for Note 💌</button>
+    <div id="note" class="note">
+      “You’re the kind of friend who makes even ordinary days feel sweet.  
+      Happy Chocolate Day 🩷🍫”
+    </div>
+  </div>
+</body>
+</html>
